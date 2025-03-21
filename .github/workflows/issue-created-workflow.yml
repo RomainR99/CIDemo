@@ -10,6 +10,5 @@ jobs:
 
     steps:
     - name: Ajouter un commentaire à l'issue
-      if: ${{on.ISSUES.types == 'opened'}}  
-        run: echo "Ticket erreur ouvert "
-        
+      run: echo "Ticket erreur ouvert"
+
