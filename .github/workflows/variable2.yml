@@ -1,0 +1,16 @@
+name : Amesia
+on:  workflow_dispatch #on est obliger de lancer manuellement dans github au lieu de [push]
+
+env:
+  NAME: Romain
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dis bonjour"
+        if: ${{ env.NAME != 'Romain'}} #option = : ≠
+        run: echo "Salut, vous n'etes pas romain?! "
+      - name: "Hello Romain"
+        if: ${{ env.NAME == 'Romain'}}  
+        run: echo "Salut $NAME , ravi de vous revoir "

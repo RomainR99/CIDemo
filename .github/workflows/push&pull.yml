@@ -1,0 +1,25 @@
+name : Push or Pull ?
+on : [push,pull_request]
+
+env:
+  PUSH: C'est un Push !
+  PULL_REQUEST : C'est un PR !
+
+jobs:
+  push:
+    runs-on: ubunty-latest
+    steps:
+      - name: Checkout  
+        uses: actions/checkout@v4
+      
+      - name: Push
+        run: echo "PUSH"
+  
+  pull_request:
+    runs-on: ubunty-latest
+    if: ${{ github.event_name == 'pull_request'}}
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v4
+      - name: pull request  
+        run: echo "PR"

@@ -1,0 +1,10 @@
+name: hello world
+on: workflow_dispatch #[push] une fois push on met ca pour éviter de les lance à chaque fois
+  jobs:
+    hello_worlds_jobs:
+      runs-on: ubuntu-latest
+      steps:
+        - name: récupération du code
+          uses: actions/setup-node@v4 
+        - name : Hello world !
+          run: echo "Hello World !"

@@ -1,0 +1,12 @@
+name: learn-githiub-actions
+on: [push]
+  jobs:
+    check-bats-version:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/chekout@v4
+        - uses: actions/setup-node@v4 #c'est dans la doc officiel node avec la version v4
+          with:
+            node-version: '18'
+        - run: npm install -g bats
+        - run: bats -v
