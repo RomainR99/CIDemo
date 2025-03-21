@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Add comment to the issue
-      uses: peter-evans/comment-on-issue@v2
+      uses: comment-on-issue@v2
       with:
         issue-number: ${{ github.event.issue.number }}
         body: 'Issue créée'
