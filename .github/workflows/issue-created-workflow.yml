@@ -9,8 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Add comment to the issue
-      uses: peter-evans/comment-on-issue@v2
+    - name: Ajouter un commentaire à l'issue
+      uses: actions/github-script@v6
       with:
-        issue-number: ${{ github.event.issue.number }}
-        body: 'Issue créée'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: 'Issue créée'
+          });
+
