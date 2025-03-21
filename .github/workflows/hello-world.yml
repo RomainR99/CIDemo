@@ -1,5 +1,5 @@
 name: hello world
-on: workflow_dispatch #[push] une fois push on met ca pour éviter de les lance à chaque fois
+on: workflow_dispatch
   jobs:
     hello_worlds_jobs:
       runs-on: ubuntu-latest
